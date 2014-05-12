@@ -1,0 +1,27 @@
+set daemon <%= @timeout %>
+<% if @invisible %>
+set invisible
+<% end %>
+<% if @no_bouncemail %>
+set no bouncemail
+<% end %>
+
+<% if @syslog %>
+set syslog
+<% end %>
+<% if @log_file %>
+set logfile <%= @log_file %>
+<% end %>
+
+<% @fetches.each do |fetch| %>
+
+poll <%= fetch['server'] %>
+protocol <%= fetch['protocol'] %>
+username "<%= fetch['username'] %>" password "<%= fetch['password'] %>"
+mda "<%= fetch['mda'] %>"
+<% if fetch['no_keep'] %>
+no keep
+<% end %>
+
+<% end %>
+
