@@ -1,11 +1,3 @@
-#
-# Cookbook Name:: fetchmail
-# Recipe:: default
-#
-# Copyright 2014, Bráulio Bhavamitra <braulio@eita.org.br>
-#
-# License: GPLv3+
-#
 
 package 'fetchmail'
 
